@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // toastify
@@ -16,12 +17,22 @@ const App = () => {
   const [data, setData] = useState(initialStates);
   const [text, setText] = useState("");
 
+  // OUTPUTS
+  const output = data.filter((val) => {
+    if (text === "") {
+      return data;
+    } else if (val[0].toLowerCase().includes(text.toLowerCase())) {
+      return val;
+    }
+  });
+
   return (
     <Router>
       <engineContext.Provider
         value={{
           data,
           text,
+          output,
           setText,
         }}
       >
