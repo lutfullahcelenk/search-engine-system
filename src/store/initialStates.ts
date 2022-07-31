@@ -1,4 +1,4 @@
-export const data = [
+export const initialStates = [
   [
     "Hyacinth Vincent",
     "Duis Corporation",
