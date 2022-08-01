@@ -2,7 +2,8 @@
 import React from "react";
 //assets
 import laptop from "../../assets/laptop.png";
-import map from "../../assets/map.png";
+//components
+import Map from "../Map";
 
 const Footer = () => {
   return (
@@ -23,9 +24,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="flex-grow">
-        <img src={map} alt="map" className="" />
-      </div>
+      <Map />
     </div>
   );
 };
