@@ -4,7 +4,8 @@ import React from "react";
 import logo from "../../assets/logo.png";
 //components
 import Form from "../../components/Form";
-import Slider from "../../components/Slider";
+import Sliders from "../../components/Sliders";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -24,8 +25,8 @@ const Home = () => {
       </div>
 
       <Form />
-
-      <Slider />
+      <Sliders />
+      <Footer />
     </div>
   );
 };

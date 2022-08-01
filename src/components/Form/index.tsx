@@ -35,7 +35,8 @@ const Form = () => {
         <button
           onClick={handleClick}
           type="button"
-          className="px-8 py-2 mt-3 text-white rounded-lg lg:mt-0 bg-darkBlue lg:ml-3"
+          disabled={text ? false : true}
+          className={`px-8 py-2 mt-3 text-white rounded-lg lg:mt-0 ${text ? "bg-darkBlue" : "bg-gray-500"} lg:ml-3`}
         >
           Search
         </button>
