@@ -1,6 +1,8 @@
+// @ts-nocheck
 import { useContext } from "react";
 import { engineContext } from "../../context/engineContext";
 import { useNavigate } from "react-router-dom";
+import search from "../../assets/search.svg";
 import Card from "../Card";
 
 const Form = () => {
@@ -13,7 +15,7 @@ const Form = () => {
       alert("Fill in the gap...");
     } else {
       setText(text);
-      navigate("/resultpage")
+      navigate("/resultpage");
     }
   };
 
@@ -24,18 +26,24 @@ const Form = () => {
       </h2>
 
       <div className="flex flex-col w-full px-8 py-2 lg:flex-row">
-        <input
-          type="text"
-          className="w-full px-3 py-2 border border-black rounded-xl "
-          placeholder="Search"
-          value={text}
-          onChange={(e: any) => setText(e.target.value)}
-        />
+        <div className="flex w-full px-3 py-3 border border-black rounded-xl">
+          <img src={search} alt="search-bar" className="" />
+          <input
+            type="text"
+            className="pl-4 outline-none"
+            placeholder="Search"
+            value={text}
+            prefix={search}
+            onChange={(e: any) => setText(e.target.value)}
+          />
+        </div>
         <button
           onClick={handleClick}
           type="button"
-          disabled={text ? false : true}
-          className={`px-8 py-2 mt-3 text-white rounded-lg lg:mt-0 ${text ? "bg-darkBlue" : "bg-gray-500"} lg:ml-3`}
+          disabled={text && text.length > 1 ? false : true}
+          className={`px-8 py-3 mt-3 text-white rounded-lg lg:mt-0 ${
+            text ? "bg-darkBlue hover:bg-buttonHover" : "bg-gray-500"
+          } lg:ml-3 `}
         >
           Search
         </button>

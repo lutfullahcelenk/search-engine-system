@@ -23,7 +23,7 @@ const Card = ({ item, page }: ICard) => {
       )}
 
       {page === "resultpage" && (
-        <div className="flex items-center justify-between py-3 ">
+        <div className="flex items-center justify-between py-3 mt-3 lg:px-6 hover:bg-hoverBlue hover:rounded-xl">
           <div className="flex items-center">
             <img src={location} alt="location" className="w-4 h-6 " />
 

@@ -26,7 +26,7 @@ const Pagination = ({
         <button
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1 ? true : false}
-          className="block px-6 py-2 mx-1 bg-white border border-gray-300 rounded-l-lg "
+          className="block px-6 py-2 mx-1 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-hoverBlue"
         >
           Previous
         </button>
@@ -36,9 +36,9 @@ const Pagination = ({
         <li key={number}>
           <button
             onClick={() => paginate(number)}
-            className={`hidden lg:block px-3 py-2 mx-1 ${
+            className={`hidden lg:block px-3 py-2 mx-1 hover:bg-hoverBlue ${
               number === currentPage ? "bg-darkBlue text-white" : "bg-white"
-            }  border border-gray-300 rounded-l-lg `}
+            }  border border-gray-300 rounded-lg `}
           >
             {number}
           </button>
@@ -51,7 +51,7 @@ const Pagination = ({
             currentPage === pageNumbers[pageNumbers.length - 1] ? true : false
           }
           onClick={() => paginate(currentPage + 1)}
-          className="block w-24 px-6 py-2 mx-1 bg-white border border-gray-300 rounded-l-lg "
+          className="block w-24 px-6 py-2 mx-1 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-hoverBlue"
         >
           Next
         </button>

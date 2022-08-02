@@ -13,7 +13,7 @@ const Home = () => {
       <div className="flex justify-end m-10 lg:m-20">
         <button
           type="button"
-          className="px-6 py-2 text-xs text-white rounded-lg bg-darkBlue lg:text-base"
+          className="px-6 py-2 text-xs text-white rounded-lg bg-darkBlue lg:text-base hover:bg-buttonHover"
           onClick={() => navigate("/addpage")}
         >
           Add New Record

@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         darkBlue: "#204080",
         lightBlue: "#647EB5",
+        hoverBlue: "#4F75C235",
+        buttonHover: "#4F75C2"
       },
     },
   },

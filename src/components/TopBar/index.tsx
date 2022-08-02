@@ -29,7 +29,7 @@ const TopBar = ({ page }: ITopBar) => {
         onClick={() => navigate("/")}
         src={logo}
         alt="logo"
-        className="w-32 h-12"
+        className="w-32 h-12 cursor-pointer"
       />
 
       {page === "resultpage" && (
@@ -47,7 +47,7 @@ const TopBar = ({ page }: ITopBar) => {
               type="button"
               disabled={text ? false : true}
               className={`px-8 py-2 mt-3 text-white rounded-lg lg:mt-0 ${
-                text ? "bg-darkBlue" : "bg-gray-500"
+                text ? "bg-darkBlue hover:bg-buttonHover" : "bg-gray-500"
               } lg:ml-3`}
             >
               Search
@@ -56,7 +56,7 @@ const TopBar = ({ page }: ITopBar) => {
 
           <button
             type="button"
-            className="px-6 py-2 text-xs text-white rounded-lg bg-darkBlue lg:text-base"
+            className="px-6 py-2 text-xs text-white rounded-lg bg-darkBlue hover:bg-buttonHover lg:text-base"
             onClick={() => navigate("/addpage")}
           >
             Add New Record

@@ -55,7 +55,7 @@ const Dropdown = ({ output, setOutput }: any) => {
       <div
         className={`${
           orderOpen ? "flex" : "hidden"
-        } flex-col absolute -right-2 top-8 mt-1 bg-white shadow-lg border rounded-lg  py-2 px-4`}
+        } flex-col absolute -right-2 top-12 mt-1 bg-white shadow-lg border rounded-lg  py-2 px-4`}
       >
         <button
           className="flex justify-start px-2 py-1 hover:bg-gray-300 hover:rounded-lg"
