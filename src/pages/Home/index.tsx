@@ -1,19 +1,20 @@
 // @ts-nocheck
-import React from "react";
-// assets
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-//components
 import Form from "../../components/Form";
 import Sliders from "../../components/Sliders";
 import Footer from "../../components/Footer";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-end m-10 lg:m-20">
         <button
           type="button"
           className="px-6 py-2 text-xs text-white rounded-lg bg-darkBlue lg:text-base"
+          onClick={() => navigate("/addpage")}
         >
           Add New Record
         </button>

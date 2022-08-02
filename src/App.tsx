@@ -1,14 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable array-callback-return */
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// toastify
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//context
 import { engineContext } from "./context/engineContext";
-//store
 import { initialStates } from "./store/initialStates";
-//pages
 import Home from "./pages/Home";
 import AddPage from "./pages/AddPage";
 import ResultPage from "./pages/ResultPage";
@@ -17,7 +14,7 @@ const App = () => {
   const [data, setData] = useState(initialStates);
   const [text, setText] = useState("");
 
-  // OUTPUTS
+  // OUTPUT
   const output = data.filter((val) => {
     if (text === "") {
       return data;

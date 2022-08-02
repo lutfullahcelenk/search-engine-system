@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { engineContext } from "../../context/engineContext";
 import { useNavigate } from "react-router-dom";
-//components
 import Card from "../Card";
 
 const Form = () => {
@@ -10,11 +9,11 @@ const Form = () => {
 
   // Search Bar Optimization
   const handleClick = (e: any) => {
-    e.preventDefault();
     if (!text) {
       alert("Fill in the gap...");
     } else {
       setText(text);
+      navigate("/resultpage")
     }
   };
 
@@ -44,7 +43,7 @@ const Form = () => {
 
       <div className="w-full p-6 mt-4 border border-black rounded-3xl">
         {output.slice(0, 3).map((item: any, index: number) => (
-          <Card key={index} item={item} />
+          <Card key={index} item={item} page="home" />
         ))}
 
         {output.length > 3 && (
@@ -52,7 +51,7 @@ const Form = () => {
             <button
               type="button"
               className="py-4 text-sm font-bold"
-              onClick={() => navigate("/resultpage", { state: { output } })}
+              onClick={() => navigate("/resultpage")}
             >
               Show More...
             </button>
