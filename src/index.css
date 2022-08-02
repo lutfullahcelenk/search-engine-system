@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-prev:before {
+  content: "<";
+  color: gray;
+  background-color: #eeeeee;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  padding: 0.25rem 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  z-index: 1000;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.slick-next:before {
+  content: ">";
+  color: gray;
+  background-color: #eeeeee;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  padding: 0.25rem 0.5rem 0.75rem;
+  font-size: 1.5rem;
+  z-index: 1000;
+  top:50%;
+  transform: translateY(-50%);
+}
