@@ -2,8 +2,6 @@
 /* eslint-disable array-callback-return */
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { engineContext } from "./context/engineContext";
 import { initialStates } from "./store/initialStates";
 import Home from "./pages/Home";
@@ -13,6 +11,12 @@ import ResultPage from "./pages/ResultPage";
 const App = () => {
   const [data, setData] = useState(initialStates);
   const [text, setText] = useState("");
+
+  //Adding Record
+  const AddRecord = (record: any) => {
+    const finalData = [...data, record];
+    setData(finalData);
+  };
 
   // OUTPUT
   const output = data.filter((val) => {
@@ -25,12 +29,14 @@ const App = () => {
 
   return (
     <Router>
+      
       <engineContext.Provider
         value={{
           data,
           text,
           output,
           setText,
+          AddRecord,
         }}
       >
         <Routes>

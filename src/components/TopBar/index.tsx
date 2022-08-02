@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { engineContext } from "../../context/engineContext";
 //assets
 import logo from "../../assets/logo.png";
+import arrow from "../../assets/arrow.svg";
 
 type ITopBar = {
   page: string;
@@ -12,7 +13,6 @@ type ITopBar = {
 const TopBar = ({ page }: ITopBar) => {
   const navigate = useNavigate();
   const { text, setText }: any = useContext(engineContext);
-
 
   // Search Bar Optimization
   const handleClick = () => {
@@ -64,7 +64,18 @@ const TopBar = ({ page }: ITopBar) => {
         </>
       )}
 
-      {page === "addpage" && <>add</>}
+      {page === "addpage" && (
+        <>
+          <button
+            type="button"
+            className="flex py-4 lg:ml-10"
+            onClick={() => navigate("/resultpage")}
+          >
+            <img src={arrow} alt="arrow" className="" />
+            <p className="pl-4">Return To List Page</p>
+          </button>
+        </>
+      )}
     </div>
   );
 };
